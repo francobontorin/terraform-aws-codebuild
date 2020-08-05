@@ -137,6 +137,7 @@ data "aws_iam_policy_document" "permissions" {
       "logs:PutLogEvents",
       "ssm:GetParameters",
       "secretsmanager:GetSecretValue",
+      "s3:*",
     ], var.extra_permissions))
 
     effect = "Allow"
