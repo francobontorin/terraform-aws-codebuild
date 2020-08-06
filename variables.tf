@@ -233,12 +233,12 @@ variable "vpc_id" {
 }
 
 variable "subnet_ids" {
-  type        = list
+  type        = list(string)
   description = "List of Subnets."
 }
 
 variable "security_group_ids" {
-  type        = list
+  type        = list(string)
   description = "List of SG's."
 }
 
