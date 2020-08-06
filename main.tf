@@ -290,13 +290,10 @@ resource "aws_codebuild_project" "default" {
     }
   }
 
-  dynamic "vpc_config" {
-    for_each = length(var.vpc_config) > 0 ? [""] : []
-    content {
-      vpc_id             = lookup(var.vpc_config, "vpc_id", null)
-      subnets            = lookup(var.vpc_config, "subnets", null)
-      security_group_ids = lookup(var.vpc_config, "security_group_ids", null)
-    }
+  vpc_config {
+    vpc_id             = var.vpc_id
+    subnets            = var.subnet_ids
+    security_group_ids = var.security_group_ids
   }
 
   dynamic "logs_config" {

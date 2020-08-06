@@ -227,6 +227,21 @@ variable "vpc_config" {
   description = "Configuration for the builds to run inside a VPC."
 }
 
+variable "vpc_id {
+  type        = string
+  description = "Configuration for the builds to run inside a VPC."
+}
+
+variable "subnet_ids {
+  type        = list
+  description = "List of Subnets."
+}
+
+variable "security_group_ids {
+  type        = list
+  description = "List of SG's."
+}
+
 variable "logs_config" {
   type        = any
   default     = {}
